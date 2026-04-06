@@ -1,5 +1,6 @@
 {
-  "buildCommand": "cd frontend && npm install && npm run build && mkdir -p ../backend/public && cp -r dist/* ../backend/public/ && cd ../backend && npm install && npx next build",
   "framework": "nextjs",
-  "outputDirectory": ".next"
+  "installCommand": "npm install --prefix frontend && npm install --prefix backend",
+  "buildCommand": "npm run build --prefix frontend && mkdir -p backend/public && cp -r frontend/dist/* backend/public/ && npm run build --prefix backend",
+  "outputDirectory": "backend/.next"
 }
